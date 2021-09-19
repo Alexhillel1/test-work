@@ -1,0 +1,222 @@
+/* Обнуление */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 14px;
+  color: #252b42;
+  font-weight: 500;
+  font-family: Montserrat;
+}
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+._container {
+  max-width: 1046px;
+  margin: 0px auto;
+  padding: 0px 15px; /*для адаптации, убираем прилепание логотипа к краю+отступ*/
+  box-sizing: content-box; /*для адаптации, убираем прилепание логотипа к краю+отступ*/
+}
+
+._ibg {
+  position: relative;
+}
+._ibg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover; /*при маштабировании картинка маштабируется*/
+}
+
+/* =======================================================ШАПКА==================================================================================== */
+
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 50;
+}
+
+.header__container {
+  display: flex;
+  min-height: 104px; /*Высотка шапки*/
+  align-items: center; /*Выравниваем объеты в шапке по центру*/
+}
+@media (max-width: 479px) {
+  /*делаем адаптацию для меню(телефон)*/
+  .header__container {
+    min-height: 85px; /*размер шапки*/
+  }
+}
+.header__logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: inherit; /*наследование цвета*/
+}
+
+.header__menu {
+  margin: 0px 0px 0px 133px; /*Отступ логотипа до меню*/
+}
+
+@media (max-width: 992px) {
+  /*делаем адаптацию для меню(планшет)*/
+  .header__menu {
+    margin: 0px 0px 0px 80px;
+  }
+}
+@media (max-width: 767px) {
+  /*делаем адаптацию для меню(телефон)*/
+  .header__menu {
+    margin: 0px 0px 0px 40px;
+  }
+}
+@media (max-width: 479px) {
+  /*делаем адаптацию для меню(телефон)*/
+  .header__menu {
+    margin: 0px 0px 0px 20px;
+  }
+}
+
+.menu {
+  padding: 5px 0; /*отступ,чтобы небыло прилипания границ меню при уменьшении разрешения*/
+}
+
+.menu__list {
+  flex-wrap: wrap; /*при адаптации меню складывается*/
+  display: flex; /*делаем горизонтальное меню*/
+}
+.menu__item {
+}
+.menu__item:not(:last-child) {
+  margin: 0px 21px 0px 0px; /*отступ между пунктами меню + убираем последний висячий оступ*/
+}
+.menu__link {
+  font-weight: 600;
+  color: #737373; /*устанавливаем размещение пространства между строками меню(адаптивное%)*/
+  line-height: calc(24 / 14 * 100%);
+}
+
+@media (max-width: 479px) {
+  /*делаем адаптацию для меню(телефон)(увеличиваем шрифт)*/
+  .menu__link {
+    font-size: 18px;
+  }
+}
+/* =======================================================PAGE==================================================================================== */
+.page {
+  flex: 1 1 auto;
+}
+.page__mainblock {
+}
+/* =======================================================MAIN_BLOCK==================================================================================== */
+
+.main-block {
+  position: relative;
+}
+.main-block__container {
+}
+._container {
+}
+.main-block__body {
+  padding: 184px 0px 191px 0px;
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+}
+.main-block__body > *:not(:last-child) {
+  margin: 0px 0px 35px 0px;
+}
+.main-block__title {
+  font-size: 58px;
+  line-height: calc(80 / 58 * 100%);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+.main-block__text {
+  color: #737373;
+  font-size: 20px;
+  line-height: 150%;
+}
+.main-block__buttons {
+  display: inline-flex;
+}
+.main-block__button {
+  border-radius: 37px;
+  display: flex;
+  min-height: 48px;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.2px;
+  text-align: center;
+
+  font-weight: 700;
+  line-height: 150%;
+  padding: 5px 36px;
+}
+.main-block__button:not(:last-child) {
+  margin: 0px 10px 0px 0px;
+}
+.main-block__button_orange {
+  background: #ff7b47;
+  color: #ffffff;
+}
+.main-block__button_border {
+  color: #0d5c63;
+  border: 1px solid #0d5c63;
+}
+
+.main-block_image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 1300px) {
+  .main-block_image img {
+    object-position: right;
+  }
+}
+/* =======================================================ПОДВАЛ==================================================================================== */
+.footer {
+}
